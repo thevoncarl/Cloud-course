@@ -25,6 +25,7 @@ for line in items.split('\n'):
 
 while (len(workers) != 0):
     for task in workers:
+	print task.ready()
         if task.ready():
             han,hon,den,det,denna,denne,hen,tweets = task.get()
 	    total_han += han
