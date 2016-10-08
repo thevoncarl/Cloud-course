@@ -17,7 +17,8 @@ total_tweets = 0
 workers = []
 for line in items.split('\n'):
     fileUrl = url + "/" + str(line)
-    workers.append(parser.delay(fileUrl))
+    result = parser.delay(fileUrl)
+    workers.append(result)
     #while(result.ready() == False):
     #	pass
 
