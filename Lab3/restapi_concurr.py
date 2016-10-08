@@ -22,7 +22,7 @@ for line in items.split('\n'):
     #	pass
 
 
- while len(workers) != 0:
+ while (len(workers) != 0):
         for task in workers:
             if task.ready():
                	han,hon,den,det,denna,denne,hen,tweets = workers[i].get()
@@ -34,6 +34,7 @@ for line in items.split('\n'):
 		total_denne += denne
 		total_hen += hen
 		total_tweets += tweets
+                workers.remove(i)
    
 
 print total_han 
