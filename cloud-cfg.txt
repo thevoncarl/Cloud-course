@@ -1,0 +1,22 @@
+#cloud-config
+
+apt_update: true
+apt_upgrade: true
+packages:
+ - cowsay
+ - python-pip
+ - python-dev
+ - rabbitmq-server
+ - build-essential
+ - cowsay
+byobu_default: system 
+
+
+runcmd:
+ - echo "export PATH=$PATH:/usr/games" >> /home/ubuntu/.bashrc  
+ - source /home/ubuntu/.bashrc
+ - git clone https://github.com/thevoncarl/Cloud-course.git
+ - export LC_ALL=C
+ - pip install celery
+- python /home/ubuntu/cowsay-app.py & 
+celery -A /home/ubuntu/Cloud-course/Lab3/parse_json worker -c 4 --loglevel=info
