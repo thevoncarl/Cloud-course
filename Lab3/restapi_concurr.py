@@ -22,16 +22,18 @@ for line in items.split('\n'):
     #	pass
 
 
-for i in (0,len(workers)-1):	
-	han,hon,den,det,denna,denne,hen,tweets = workers[i].get()
-	total_han += han
-	total_hon += hon
-	total_den += den
-	total_det += det
-	total_denna += denna
-	total_denne += denne
-	total_hen += hen
-	total_tweets += tweets
+ while len(workers) != 0:
+        for task in workers:
+            if task.ready():
+               	han,hon,den,det,denna,denne,hen,tweets = workers[i].get()
+	        total_han += han
+	        total_hon += hon
+	        total_den += den
+		total_det += det
+		total_denna += denna
+		total_denne += denne
+		total_hen += hen
+		total_tweets += tweets
    
 
 print total_han 
