@@ -35,6 +35,7 @@ while (len(workers) != 0):
 	    total_hen += hen
 	    total_tweets += tweets
             workers.remove(task)
+            print len(workers)
    
 
 print total_han 
