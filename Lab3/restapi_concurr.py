@@ -22,7 +22,7 @@ for line in items.split('\n'):
     #	pass
 
 
-for i in (0,len(workers)):	
+for i in (0,len(workers)-1):	
 	han,hon,den,det,denna,denne,hen,tweets = workers[i].get()
 	total_han += han
 	total_hon += hon
