@@ -4,7 +4,7 @@ import urllib2
 import re
 from celery import Celery
 
-app = Celery('item ', backend='rpc://', broker='amqp://test:test@192.168.0.172')
+app = Celery('item ', backend='rpc://', broker='amqp://test:test@192.168.0.246')
 
 @app.task
 def parser(url):
