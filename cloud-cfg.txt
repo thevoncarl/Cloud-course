@@ -14,7 +14,7 @@ runcmd:
  - git clone https://github.com/thevoncarl/Cloud-course.git
  - export LC_ALL=C
  - pip install celery
- - cd /home/ubuntu/Cloud-course/Lab3/
- - celery -A parse_json worker -c 4 --loglevel=info
+ - cd /home/ubuntu/Cloud-course/Lab3/ && celery -A parse_json worker -c 4 --loglevel=info
+
 
 

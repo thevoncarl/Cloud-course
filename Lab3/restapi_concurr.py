@@ -42,8 +42,8 @@ def fun():
 	    total_tweets += tweets
             workers.remove(task)
 
-   jsonString = {'han': han, 'hon': hon, "den": den, "det": det, "denna": denna, "denne": denne, "hen": hen, "tweets": tweets}
-   return (json.dumps(jsonString))
+    jsonString = {'han': han, 'hon': hon, "den": den, "det": det, "denna": denna, "denne": denne, "hen": hen, "tweets": tweets}
+    return (json.dumps(jsonString))
 
 
 if __name__ == '__main__':
