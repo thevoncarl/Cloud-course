@@ -12,8 +12,7 @@ filename = str(uuid.uuid4())
 
 flavor = "m1.small" 
 private_net = "g2015034-net_2"
-floating_ip_pool_name = "public"
-floating_ip = None
+
 
 loader = loading.get_plugin_loader('password')
 auth = loader.load_from_options(auth_url=env['OS_AUTH_URL'],
@@ -50,10 +49,7 @@ secgroups = [secgroup.id]
 
 #floating_ip = nova.floating_ips.create(nova.floating_ip_pools.list()[0].name)
 
-if floating_ip_pool_name != None: 
-    floating_ip = nova.floating_ips.create(floating_ip_pool_name)
-else: 
-    sys.exit("public ip pool name not defined.")
+
 
 #f = open('/home/viktor/.ssh/id_rsa.pub','r')
 #publickey = f.readline()[:-1]
@@ -75,8 +71,4 @@ while inst_status == 'BUILD':
 
 print "Instance: "+ instance.name +" is in " + inst_status + "state"
 
-if floating_ip.ip != None: 
-    instance.add_floating_ip(floating_ip)
-    print "Instance booted! Name: " + instance.name + " Status: " +instance.status+ ", floating IP attached " + floating_ip.ip
-else:
-    print "Instance booted! Name: " + instance.name + " Status: " +instance.status+ ", floating IP missing"
+

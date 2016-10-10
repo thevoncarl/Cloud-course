@@ -3,6 +3,7 @@ import urllib2
 from flask import Flask, jsonify
 import subprocess
 import sys
+import json
 
 app = Flask(__name__)
 
@@ -40,17 +41,9 @@ def fun():
 	    total_hen += hen
 	    total_tweets += tweets
             workers.remove(task)
-            print len(workers)
-   
 
-print total_han 
-print total_hon 
-print total_den 
-print total_det 
-print total_denna
-print total_denne 
-print total_hen
-print total_tweets
+   jsonString = {'han': han, 'hon': hon, "den": den, "det": det, "denna": denna, "denne": denne, "hen": hen, "tweets": tweets}
+   return (json.dumps(jsonString))
 
 
 if __name__ == '__main__':

@@ -3,17 +3,18 @@
 apt_update: true
 apt_upgrade: true
 packages:
-  - python-pip
-  - python-dev
-  - rabbitmq-server
-  - build-essential
+ - python-pip
+ - python-dev
+ - rabbitmq-server
+ - build-essential
 byobu_default: system 
 
 
 runcmd:
-  - git clone https://github.com/thevoncarl/Cloud-course.git
-  - export LC_ALL=C
-  - pip install celery
-  -celery -A /home/ubuntu/Cloud-course/Lab3/parse_json worker -c 4 --loglevel=info
+ - git clone https://github.com/thevoncarl/Cloud-course.git
+ - export LC_ALL=C
+ - pip install celery
+ - cd /home/ubuntu/Cloud-course/Lab3/
+ - celery -A parse_json worker -c 4 --loglevel=info
 
-output: {all: '| tee -a /var/log/cloud-init-output.log'}
+
