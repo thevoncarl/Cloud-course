@@ -42,7 +42,7 @@ def fun():
 	    total_tweets += tweets
             workers.remove(task)
 
-    jsonString = {'han': han, 'hon': hon, "den": den, "det": det, "denna": denna, "denne": denne, "hen": hen, "tweets": tweets}
+    jsonString = {'han': total_han, 'hon': total_hon, "den": total_den, "det": total_det, "denna": total_denna, "denne": total_denne, "hen": total_hen, "tweets": total_tweets}
     return (json.dumps(jsonString))
 
 
