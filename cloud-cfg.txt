@@ -5,16 +5,19 @@ apt_upgrade: true
 packages:
  - python-pip
  - python-dev
- - rabbitmq-server
  - build-essential
+ - git
 byobu_default: system 
 
 
+
 runcmd:
- - git clone https://github.com/thevoncarl/Cloud-course.git
+ - echo "export PATH=$PATH:/usr/games" >> /home/ubuntu/.bashrc  
+ - source /home/ubuntu/.bashrc
  - export LC_ALL=C
  - pip install celery
- - cd /home/ubuntu/Cloud-course/Lab3/ && celery -A parse_json worker -c 4 --loglevel=info
+ - git clone https://github.com/thevoncarl/Cloud-course.git /home/ubuntu/Cloud-course
+ - cd /home/ubuntu/Cloud-course/Lab3/ && C_FORCE_ROOT=1 celery -A parse_json worker -c 4 --loglevel=info
 
 
 

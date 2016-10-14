@@ -36,8 +36,7 @@ if private_net != None:
 else:
     sys.exit("private-net not defined.")
 
-#print("Path at terminal when executing this file")
-#print(os.getcwd() + "\n")
+
 cfg_file_path =  os.getcwd()+'/cloud-cfg.txt'
 if os.path.isfile(cfg_file_path):
     userdata = open(cfg_file_path)
@@ -47,14 +46,9 @@ else:
 secgroup = nova.security_groups.find(name="default")
 secgroups = [secgroup.id]
 
-#floating_ip = nova.floating_ips.create(nova.floating_ip_pools.list()[0].name)
 
-
-
-#f = open('/home/viktor/.ssh/id_rsa.pub','r')
-#publickey = f.readline()[:-1]
 keypair = nova.keypairs.get('viktor_kp')
-#f.close()
+
 
 
 print "Creating instance ... "
