@@ -24,7 +24,7 @@ def parser(url):
         try:
             data.append(json.loads(line))
         except ValueError:
-            x = 0
+            pass
 
 
     for i in data:
